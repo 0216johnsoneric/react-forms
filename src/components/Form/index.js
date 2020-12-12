@@ -1,11 +1,16 @@
 import React, { Component } from "react";
 import "./style.css";
 
+
+
+//A new input field that updates `this.state.password`. 
+//Set the initial value of `this.state.password` to an empty string.
 class Form extends Component {
   // Setting the component's initial state
   state = {
     firstName: "",
-    lastName: ""
+    lastName: "",
+    password: ""
   };
 
   handleInputChange = event => {
@@ -22,13 +27,25 @@ class Form extends Component {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
 
-    // if 
+    if (!this.state.firstName || !this.state.lastName) {
+      alert(`Fill out your first and last name please!`)
+      return
+    }
+    else if (this.state.password.length <= 6) {
+      alert(`Choose a more secure password, ${this.state.firstName} ${this.state.lastName}!`)
+      return
+    }
+    else {
+      alert(`Hello ${this.state.firstName} ${this.state.lastName} ${this.state.password}`)
+    }
     // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
-    alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
+    // alert(`Hello ${this.state.firstName} ${this.state.lastName} ${this.state.password}`);
     this.setState({
       firstName: "",
-      lastName: ""
+      lastName: "",
+      password: ""
     });
+
   };
 
   render() {
@@ -52,6 +69,13 @@ class Form extends Component {
             onChange={this.handleInputChange}
             type="text"
             placeholder="Last Name"
+          />
+          <input
+            value={this.state.password}
+            name="password"
+            onChange={this.handleInputChange}
+            type="text"
+            placeholder="Password"
           />
           <button onClick={this.handleFormSubmit}>Submit</button>
         </form>
