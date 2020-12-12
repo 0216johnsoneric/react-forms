@@ -76,6 +76,7 @@ class Form extends Component {
             onChange={this.handleInputChange}
             type="text"
             placeholder="Password"
+            maxlength={15}
           />
           <button onClick={this.handleFormSubmit}>Submit</button>
         </form>
