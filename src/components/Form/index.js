@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./style.css";
 
 
-
 //A new input field that updates `this.state.password`. 
 //Set the initial value of `this.state.password` to an empty string.
 class Form extends Component {
@@ -84,6 +83,7 @@ class Form extends Component {
             maxlength={15}
           />
           <button onClick={this.handleFormSubmit}>Submit</button>
+          
         </form>
       </div>
     );
