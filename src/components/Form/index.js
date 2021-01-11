@@ -80,7 +80,7 @@ class Form extends Component {
             type="text"
             placeholder="Password"
             //Do not allow the user to type in a password that is longer than 15 characters
-            maxlength={15}
+            maxlength={10}
           />
           <button onClick={this.handleFormSubmit}>Submit</button>
           
