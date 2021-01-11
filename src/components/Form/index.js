@@ -59,6 +59,7 @@ class Form extends Component {
           Hello {this.state.firstName} {this.state.lastName}
         </p>
         <form className="form">
+        
           <input
             value={this.state.firstName}
             name="firstName"
@@ -66,6 +67,7 @@ class Form extends Component {
             type="text"
             placeholder="First Name"
           />
+
           <input
             value={this.state.lastName}
             name="lastName"
@@ -73,6 +75,7 @@ class Form extends Component {
             type="text"
             placeholder="Last Name"
           />
+
           <input
             value={this.state.password}
             name="password"
@@ -82,6 +85,7 @@ class Form extends Component {
             //Do not allow the user to type in a password that is longer than 15 characters
             maxlength={10}
           />
+
           <button onClick={this.handleFormSubmit}>Submit</button>
           
         </form>
