@@ -1,5 +1,5 @@
 import React from "react";
-import Form from "./components/Parent";
+import Parent from "./components/Form/Parent";
 
 function App() {
   
